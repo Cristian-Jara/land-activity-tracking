@@ -1,0 +1,24 @@
+name: Next.js Frontend CI
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: "20.10.0"
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Run linting
+      run: yarn lint
