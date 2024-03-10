@@ -1,0 +1,44 @@
+strictness: veryhigh
+max-line-length: 100
+
+uses:
+  - django
+
+dodgy:
+  run: true
+
+mccabe:
+  run: false
+
+profile-validator:
+  run: true
+
+pycodestyle:
+  run: true
+
+pyflakes:
+  run: true
+
+pylint:
+  disable:
+    - too-few-public-methods
+    - too-many-ancestors
+  options:
+    good-names:
+      - db
+    django-settings-module: conf.settings
+    ignore:
+      - migrations
+      - manage.py
+
+pyroma:
+  run: true
+
+bandit:
+  run: true
+
+ignore-paths:
+  - migrations
+
+ignore-patterns:
+  - ".*migrations.*"
