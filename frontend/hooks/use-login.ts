@@ -24,7 +24,7 @@ export default function useLogin() {
           router.push(next);
           return;
         }
-        router.push("/activities");
+        router.push("/");
       });
   };
 

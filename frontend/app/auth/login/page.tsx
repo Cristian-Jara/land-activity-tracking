@@ -1,6 +1,7 @@
 "use strict";
 import React from "react";
 import type { Metadata } from "next";
+import { LoginForm } from "@/components/forms";
 
 export const metadata: Metadata = {
   title: "Land Activity Tracker - Login",
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Login() {
-  return <div>login</div>;
+  return <LoginForm />;
 }

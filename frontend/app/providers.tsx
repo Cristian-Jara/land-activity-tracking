@@ -1,7 +1,12 @@
 "use client";
 
 import { NextUIProvider } from "@nextui-org/react";
+import RootProvider from "@/redux/provider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return <NextUIProvider>{children}</NextUIProvider>;
+  return (
+    <RootProvider>
+      <NextUIProvider>{children}</NextUIProvider>
+    </RootProvider>
+  );
 }
