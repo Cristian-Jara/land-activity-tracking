@@ -121,6 +121,7 @@ export default function Activities() {
             ?.filter((activity: Activity) => activity.fertilization_area)
             .map((activity: Activity) => (
               <Source
+                key={activity.id}
                 id={`${activity.id}`}
                 type="geojson"
                 data={{
