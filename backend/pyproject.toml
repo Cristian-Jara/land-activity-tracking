@@ -28,6 +28,7 @@ migrate = "python manage.py migrate"
 makemigrations = "python manage.py makemigrations"
 start = "python manage.py runserver"
 post_init = { composite = ["pdm install", "migrate", "start"] }
+test = "python manage.py test"
 
 [tool.pdm.dev-dependencies]
 dev = [

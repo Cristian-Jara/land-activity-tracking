@@ -11,7 +11,7 @@ class ActivityType(models.Model):
 
     class NKS:
         SOIL = 'Soil Sample'
-        FERT = 'Fertilization area'
+        FERT = 'Fertilization Area'
 
     @classproperty
     def soil(cls):
