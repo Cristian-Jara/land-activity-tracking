@@ -53,4 +53,6 @@ export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: baseQueryWithReauth,
   endpoints: () => ({}),
+}).enhanceEndpoints({
+  addTagTypes: ["Activity", "Activities"],
 });

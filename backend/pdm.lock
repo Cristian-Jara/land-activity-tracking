@@ -4,8 +4,8 @@
 [metadata]
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
-lock_version = "4.4"
-content_hash = "sha256:5736a7d89c4e6fe5c0a5dedaf7dce46dd0dc5ab274b0aaf1dcd78a1c3381b579"
+lock_version = "4.4.1"
+content_hash = "sha256:5885a48fd9bd550627bdd9ef446ce4a20ef308aec2b2865bb2263bf9e86ebd53"
 
 [[package]]
 name = "asgiref"
@@ -267,6 +267,18 @@ files = [
 ]
 
 [[package]]
+name = "djangorestframework-gis"
+version = "1.0"
+summary = "Geographic add-ons for Django Rest Framework"
+dependencies = [
+    "djangorestframework",
+]
+files = [
+    {file = "djangorestframework-gis-1.0.tar.gz", hash = "sha256:921c5adbc9a7c0502c905957a6695b67f55d7bf6582e1ab837888b55a1fce5a6"},
+    {file = "djangorestframework_gis-1.0-py2.py3-none-any.whl", hash = "sha256:bb715f05a111c02b9acc4021b17566e40c0b90dd833c583bac3d67f92be9667d"},
+]
+
+[[package]]
 name = "djangorestframework-simplejwt"
 version = "5.3.1"
 requires_python = ">=3.8"
@@ -350,6 +362,15 @@ dependencies = [
 files = [
     {file = "flake8-polyfill-1.0.2.tar.gz", hash = "sha256:e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda"},
     {file = "flake8_polyfill-1.0.2-py2.py3-none-any.whl", hash = "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9"},
+]
+
+[[package]]
+name = "gdal"
+version = "3.8.4"
+requires_python = ">=3.6.0"
+summary = ""
+files = [
+    {file = "GDAL-3.8.4.tar.gz", hash = "sha256:7c51e0ae7a7ccf43ad9e4bf435176baa9276653dfa16fd167c3632f6e7275207"},
 ]
 
 [[package]]

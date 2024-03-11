@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useAppSelector } from "@/redux/hooks";
 import { useVerify } from "@/hooks";
 import { Spinner } from "@nextui-org/spinner";
+import AppLayout from "./AppLayout";
 
 export default function RequireAuth({
   children,
@@ -23,8 +24,8 @@ export default function RequireAuth({
   }, [isAuthenticated, pathName, router, isLoading]);
 
   if (isLoading) {
-    return (<Spinner size="lg" />);
+    return <Spinner size="lg" />;
   }
 
-  return children;
+  return <AppLayout>{children}</AppLayout>;
 }
