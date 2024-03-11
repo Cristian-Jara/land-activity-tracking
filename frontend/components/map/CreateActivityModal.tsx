@@ -58,7 +58,7 @@ export default function CreateActivityModal({
             : null,
       })
         .unwrap()
-        .then((data) => {
+        .then((data: Activity) => {
           setName("");
           setType("");
           setMeasurements([]);

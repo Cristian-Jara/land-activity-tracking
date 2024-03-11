@@ -23,8 +23,8 @@ export default function LoginForm() {
 
   return (
     <div className="center-container">
-      <Card className="max-w-[500px]">
-        <CardBody className="flex py-8 px-3">
+      <Card className="w-[400px]">
+        <CardBody className="flex py-10 px-6">
           <Input
             isClearable
             isRequired
@@ -34,9 +34,9 @@ export default function LoginForm() {
             label="Email"
             variant="bordered"
             placeholder="Enter your email"
-            className="max-w-xs"
+            className="w-full"
           />
-          <Spacer y={5} />
+          <Spacer y={6} />
           <Input
             isRequired
             value={password}
@@ -58,10 +58,11 @@ export default function LoginForm() {
               </button>
             }
             type={isVisible ? "text" : "password"}
-            className="max-w-xs"
+            className="w-full"
           />
-          <Divider />
           <Spacer y={10} />
+          <Divider />
+          <Spacer y={6} />
           <Button
             color="primary"
             onClick={() => onSubmit({ email, password })}

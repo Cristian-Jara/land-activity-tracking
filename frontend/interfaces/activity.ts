@@ -24,6 +24,7 @@ interface Fertilization_Area {
 interface Activity {
   id?: number | string;
   type: string | number;
+  activity_type?: string;
   name?: string;
   measurements: Measurement[];
   soil_sample: Soil_Sample;

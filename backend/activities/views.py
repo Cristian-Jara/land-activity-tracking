@@ -17,6 +17,7 @@ from .serializers import (
     RetrieveMeasurementSerializer,
     UpdateMeasurementSerializer,
 )
+from .filters import MeasurementFilter
 
 
 class ListActivitiesView(ListAPIView):
@@ -51,6 +52,7 @@ class UpdateActivityView(UpdateAPIView):
 class ListMeasurementsView(ListAPIView):
     queryset = Measurement.objects.all()
     serializer_class = MeasurementListSerializer
+    filterset_class = MeasurementFilter
 
 
 class RetrieveMeasurementView(RetrieveAPIView):

@@ -56,6 +56,23 @@ const documentApiSlice = apiSlice.injectEndpoints({
         "Activities",
       ],
     }),
+    getMeasurements: builder.query({
+      query: (params) => ({
+        url: "measurements/",
+        method: "GET",
+        params: params,
+      }),
+      providesTags: (result, _, { activity }) =>
+        result
+          ? [
+              ...result.map(({ id }: { id: number }) => ({
+                type: "Measurements" as const,
+                id,
+              })),
+              { type: "Activity", id: activity },
+            ]
+          : [{ type: "Activity", id: activity }],
+    }),
   }),
 });
 
@@ -65,4 +82,5 @@ export const {
   useGetActivityQuery,
   useGetActivitiesQuery,
   useCreateMeasurementMutation,
+  useGetMeasurementsQuery,
 } = documentApiSlice;

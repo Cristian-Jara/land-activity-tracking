@@ -13,6 +13,12 @@ from .models import (
 class CreateMeasurementSerializer(WritableNestedModelSerializer):
     class Meta:
         model = Measurement
+        fields = '__all__'
+
+
+class CreateNestedMeasurementSerializer(WritableNestedModelSerializer):
+    class Meta:
+        model = Measurement
         exclude = ['activity']
 
 
@@ -92,7 +98,7 @@ class UpdateSoilSampleSerializer(ModelSerializer):
 
 
 class CreateActivitySerializer(WritableNestedModelSerializer):
-    measurement_set = CreateMeasurementSerializer(many=True)
+    measurement_set = CreateNestedMeasurementSerializer(many=True)
     soil_sample = CreateSoilSampleSerializer(required=False, allow_null=True)
     fertilization_area = CreateFertilizationAreaSerializer(required=False, allow_null=True)
 
@@ -102,9 +108,16 @@ class CreateActivitySerializer(WritableNestedModelSerializer):
 
 
 class RetrieveActivitySerializer(ModelSerializer):
+    activity_type = SerializerMethodField()
+    soil_sample = RetrieveSoilSampleSerializer()
+    fertilization_area = RetrieveFertilizationAreaSerializer()
+
     class Meta:
         model = Activity
         fields = '__all__'
+
+    def get_activity_type(self, obj):
+        return obj.activity_type.name
 
 
 class ActivityListSerializer(ModelSerializer):
@@ -121,7 +134,7 @@ class ActivityListSerializer(ModelSerializer):
 
 
 class UpdateActivitySerializer(ModelSerializer):
-    measurement_set = CreateMeasurementSerializer(many=True)
+    measurement_set = CreateNestedMeasurementSerializer(many=True)
     soil_sample = CreateSoilSampleSerializer(default=None)
     fertilization_area = CreateFertilizationAreaSerializer(default=None)
 
